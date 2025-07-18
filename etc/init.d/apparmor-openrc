@@ -11,6 +11,7 @@ depend() {
 	# Should start after modules are loaded and before most services.
 	after modules
 	before local
+	provide apparmor
 }
 
 # Helper function to check if we are in a container that should not load policy.
