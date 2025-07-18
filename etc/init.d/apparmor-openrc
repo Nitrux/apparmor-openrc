@@ -15,11 +15,15 @@ depend() {
 }
 
 # Helper function to check if we are in a container that should not load policy.
+# (This mirrors the Sysv script).
 _is_unprivileged_container() {
-	if [ -x /usr/bin/systemd-detect-virt ] && \
-	   systemd-detect-virt --quiet --container && \
-	   ! is_container_with_internal_policy; then
-		return 0
+	# The presence of /.dockerenv or specific cgroup paths are reliable indicators.
+	if [ -f /.dockerenv ] || grep -q -E '/docker|/lxc' /proc/1/cgroup; then
+		# is_container_with_internal_policy is a shell function from the
+		# sourced apparmor library that checks for specific privileged containers.
+		if ! is_container_with_internal_policy; then
+			return 0
+		fi
 	fi
 	return 1
 }
