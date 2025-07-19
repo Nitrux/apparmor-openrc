@@ -10,9 +10,6 @@ depend() {
 	provide apparmor
 }
 
-# --- Helper functions required by the AppArmor library ---
-# These redirect the library's output to OpenRC's logging functions.
-
 aa_log_daemon_msg() {
 	einfo "$@"
 }
