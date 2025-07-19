@@ -1,3 +1,9 @@
+apparmor-openrc (0.0.4)  nitrux; urgency=medium
+
+  * Define logging functions.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 18 Jul 2025 19:56:00 -0500
+
 apparmor-openrc (0.0.3)  nitrux; urgency=medium
 
   * Remove calls to systemd-detect-virt.
