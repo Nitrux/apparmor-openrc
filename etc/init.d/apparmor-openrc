@@ -33,7 +33,6 @@ aa_log_failure_msg() {
 aa_log_warning_msg() {
 	ewarn "$@"
 }
-# --- End of helper functions ---
 
 _is_unprivileged_container() {
 	if [ -f /.dockerenv ] || grep -q -E '/docker|/lxc' /proc/1/cgroup; then
