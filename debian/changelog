@@ -1,3 +1,9 @@
+apparmor-openrc (0.0.5)  nitrux; urgency=medium
+
+  * Define logging functions, again.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 20 Jul 2025 06:00:00 -0500
+
 apparmor-openrc (0.0.4)  nitrux; urgency=medium
 
   * Define logging functions.

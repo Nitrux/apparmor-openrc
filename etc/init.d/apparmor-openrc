@@ -34,6 +34,10 @@ aa_log_warning_msg() {
 	ewarn "$@"
 }
 
+aa_log_end_msg() {
+	eend "$@"
+}
+
 _is_unprivileged_container() {
 	if [ -f /.dockerenv ] || grep -q -E '/docker|/lxc' /proc/1/cgroup; then
 		if ! is_container_with_internal_policy; then
